@@ -1,0 +1,27 @@
+{
+  "name": "reaflet",
+  "version": "1.0.0",
+  "description": "React wrapper foe leaflet map",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gongruya/reaflet.git"
+  },
+  "keywords": [
+    "leaflet",
+    "map",
+    "react"
+  ],
+  "author": "Ruya Gong",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/gongruya/reaflet/issues"
+  },
+  "homepage": "https://github.com/gongruya/reaflet#readme",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

@@ -41,3 +41,30 @@ export default function App() {
   );
 }
 ```
+
+### next.js
+You will have to [dynamically import](https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr)
+the components with no ssr when using reaflet in nextjs projects. The easiest way is to wrap your `<LeafletMap>`
+implementation in another component and then dynamically import that component.
+
+MyLeafletContainer.tsx
+```typescript
+export default function MyLeafletContainer() {
+  return (
+    <LeafletMap center={[37.774546, -122.433523]}>
+      <LeafletTileLayer />
+    </LeafletMap>
+  );
+}
+```
+
+page.tsx
+```typescript
+import dynamic from 'next/dynamic';
+const MyLeafletContainer =
+  dynamic(() => import('./MyLeafletContainer'), {ssr: false});
+
+export default function Home() {
+  return <MyLeafletContainer />;
+};
+```

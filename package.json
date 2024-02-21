@@ -1,7 +1,7 @@
 {
   "name": "reaflet",
   "version": "1.0.0",
-  "description": "React wrapper foe leaflet map",
+  "description": "React wrapper for leaflet map",
   "main": "index.ts",
   "scripts": {
     "test": "test"
@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/gongruya/reaflet/issues"
   },
-  "homepage": "https://github.com/gongruya/reaflet#readme",
+  "homepage": "https://github.com/gongruya/reaflet",
   "devDependencies": {
     "typescript": "^5.3.3"
   }

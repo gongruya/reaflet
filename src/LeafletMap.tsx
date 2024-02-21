@@ -8,21 +8,21 @@ export interface LeafletMapProps {
   center: L.LatLngExpression;
   zoom?: number;
   options?: L.MapOptions;
-  onMove?: (bounds: L.LatLngBounds) => void;
   onClick?: (latlng: L.LatLng) => void;
+  onMoveEnd?: (bounds: L.LatLngBounds) => void;
   children?: React.ReactNode;
 }
 
 export function LeafletMap(props: LeafletMapProps) {
-  const {style, center, zoom, options, onMove, onClick, children} = props;
+  const {style, center, zoom, options, onClick, onMoveEnd, children} = props;
   const [map, setMap] = useState<L.Map>();
 
   const mapRef = useCallback((container: HTMLDivElement) => {
     const leafletMap = L.map(container, options);
 
     leafletMap.addEventListener('moveend', () => {
-      if (onMove) {
-        onMove(leafletMap.getBounds());
+      if (onMoveEnd) {
+        onMoveEnd(leafletMap.getBounds());
       }
     });
 

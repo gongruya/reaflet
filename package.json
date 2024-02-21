@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "React wrapper for leaflet map",
   "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./raster": "./src/raster/index.ts",
+    "./ui": "./src/ui/index.ts",
+    "./vector": "./src/vector/index.ts"
+  },
   "scripts": {},
   "repository": {
     "type": "git",

@@ -6,8 +6,8 @@ Reaflet is a React wrapper for the popular [Leaflet map](https://github.com/Leaf
 
 ```typescript
 import React from 'react';
-import {LeafletMap} 'reaflet';
-import {LeafletTileLayer} 'reaflet/raster';
+import {LeafletMap} 'reaflet-map';
+import {LeafletTileLayer} 'reaflet-map/raster';
 
 export default function App() {
   return (

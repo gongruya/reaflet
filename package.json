@@ -1,7 +1,7 @@
 {
-  "name": "reaflet",
+  "name": "reaflet-map",
   "version": "1.0.0",
-  "description": "React wrapper for leaflet map",
+  "description": "React wrapper components for leaflet map",
   "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",

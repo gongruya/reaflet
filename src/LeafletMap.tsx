@@ -19,12 +19,19 @@ export function LeafletMap(props: LeafletMapProps) {
   const mapRef = useCallback((container: HTMLDivElement) => {
     const leafletMap = L.map(container, options);
     registerLeafletEvents(leafletMap, props);
+    leafletMap.setView(center, zoom);
     setMap(leafletMap);
   }, []);
 
   useEffect(() => {
     map?.setView(center, zoom);
-  }, [map, center, zoom]);
+  }, [map, center]);
+
+  useEffect(() => {
+    if (zoom) {
+      map?.setZoom(zoom);
+    }
+  }, [map, zoom]);
 
   return (
     <div ref={mapRef} style={style}>

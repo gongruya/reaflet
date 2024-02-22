@@ -1,9 +1,9 @@
-import {Polyline, LatLngExpression, PolylineOptions} from 'leaflet';
+import {LatLngExpression, Polyline, PolylineOptions} from 'leaflet';
 import {useLeafletMap} from '../hooks/useLeafletMap';
 import {useEffect, useState} from 'react';
 
 export interface LeafletPolylineProps {
-  latlngs: LatLngExpression[];
+  latlngs: LatLngExpression[] | LatLngExpression[][];
   options?: PolylineOptions;
 }
 

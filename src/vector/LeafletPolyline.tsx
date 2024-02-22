@@ -9,10 +9,13 @@ export interface LeafletPolylineProps {
 
 export function LeafletPolyline({latlngs, options}: LeafletPolylineProps) {
   const maybeMap = useLeafletMap();
-  const [polyline] = useState<Polyline>(new Polyline(latlngs, options));
+  const [polyline] = useState(new Polyline(latlngs, options));
 
   useEffect(() => {
     maybeMap?.addLayer(polyline);
+    return () => {
+      maybeMap?.removeLayer(polyline);
+    };
   }, [maybeMap]);
 
   useEffect(() => {

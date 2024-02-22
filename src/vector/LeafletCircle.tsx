@@ -9,10 +9,13 @@ export interface LeafletCircleProps {
 
 export function LeafletCircle({latlng, options}: LeafletCircleProps) {
   const maybeMap = useLeafletMap();
-  const [circle] = useState<Circle>(new Circle(latlng, options));
+  const [circle] = useState(new Circle(latlng, options));
 
   useEffect(() => {
     maybeMap?.addLayer(circle);
+    return () => {
+      maybeMap?.removeLayer(circle);
+    };
   }, [maybeMap]);
 
   useEffect(() => {

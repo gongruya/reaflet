@@ -9,10 +9,13 @@ export interface LeafletPolygonProps {
 
 export function LeafletPolygon({latlngs, options}: LeafletPolygonProps) {
   const maybeMap = useLeafletMap();
-  const [polygon] = useState<Polygon>(new Polygon(latlngs, options));
+  const [polygon] = useState(new Polygon(latlngs, options));
 
   useEffect(() => {
     maybeMap?.addLayer(polygon);
+    return () => {
+      maybeMap?.removeLayer(polygon);
+    };
   }, [maybeMap]);
 
   useEffect(() => {

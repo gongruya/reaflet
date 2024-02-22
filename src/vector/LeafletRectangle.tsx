@@ -13,6 +13,9 @@ export function LeafletRectangle({bounds, options}: LeafletRectangleProps) {
 
   useEffect(() => {
     maybeMap?.addLayer(rectangle);
+    return () => {
+      maybeMap?.removeLayer(rectangle);
+    };
   }, [maybeMap]);
 
   useEffect(() => {
